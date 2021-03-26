@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <p>Digite um Numero qualquer (Positivo ou negativo)</p><br>
+     <input type = "number" id = "n1">
+     <input type = "button" value = "Checar" onclick = "check()">
+     <div id = "res"></div>
+
+     <script>
+
+        function check()
+        {
+
+           var n1  = Number(window.document.querySelector('input#n1').value)
+           var res = window.document.querySelector('div#res')
+
+           if( n1 === 0 )
+           {
+              res.innerHTML = `${n1} é neutro`              
+           }
+           if(n1 > 0)
+           {
+            res.innerHTML = `${n1} é positivo`
+           }
+           if(n1 < 0 )
+           {
+            res.innerHTML = `${n1} é negativo`
+           }
+
+        }
+
+     </script>
+
+</body>
+</html>

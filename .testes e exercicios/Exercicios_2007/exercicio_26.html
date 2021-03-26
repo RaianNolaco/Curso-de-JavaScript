@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+      div#res
+      {
+       margin-top:20pt;
+       border: 12pt;
+      }
+      input#btn
+      {
+          margin-top: 20pt;
+      }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Media do estoque</h1>
+
+    <!--Incerção do usuario atravez do html-->
+    <p>Digite a quantidade <strong>atual</strong> no estoque</p>
+    <input type = "number" id = "qntAtual"><br> 
+    <p>Digite a quantidade <strong>maxima</strong> do estoque</p>
+    <input type = "number" id = "qntMax"><br>
+    <p>Digite a quantidade <strong>minima</strong> do estoque</p>
+    <input type = "number" id = "qntMin"><br>
+
+
+    <input type = "button" value = "Calcular" onclick = "MedEstoque()" id = "btn">
+
+    <div id = "res">Resultado<div>
+
+
+    <script>
+ 
+      function MedEstoque()
+      {
+
+        var tAtu = window.document.querySelector('input#qntAtual')
+        var tMax = window.document.querySelector('input#qntMax')
+        var tMin = window.document.querySelector('input#qntMin')
+        var res  = window.document.querySelector('div#res')
+
+        var atu = Number(tAtu.value)
+        var max = Number(tMax.value)
+        var min = Number(tMin.value)
+
+        var med = (max + min) / 2
+
+        if(atu >= med)
+        {
+             res.innerHTML = `Não efetue o reabastecimento`
+        }
+        else
+        {
+             res.innerHTML = `Efetuar reabastecimento`
+        }
+
+      }
+    
+    </script>
+</body>
+</html>

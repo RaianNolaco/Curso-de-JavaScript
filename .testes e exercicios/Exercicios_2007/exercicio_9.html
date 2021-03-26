@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercico 9</title>
+</head>
+<body>
+    
+   <script>
+    
+      var salario,percentual,nome
+  
+       nome = prompt('Digite do funcionario: ')
+       salario = Number(prompt('Digite o salario atual: '))
+       percentual = Number(prompt('Digite o percentual do reajuste(sem o %): '))
+
+       var calcPer = (percentual * salario) /100
+       var calcSal = salario + calcPer
+
+       document.writeln(`O funcionario ${nome}, obteve um reajuste de ${percentual}%<br>`)
+       document.writeln(`Salario antigo: ${salario.toLocaleString('pt-br', {style:'currency', currency:'BRL'})}<br>`)
+       document.writeln(`Salario atual: ${calcSal.toLocaleString('pt-br', {style:'currency', currency:'BRL'})}<br>`)
+
+   </script>
+
+</body>
+</html>

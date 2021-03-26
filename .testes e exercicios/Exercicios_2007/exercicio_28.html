@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite 3 numeros</p>
+    <input type = "number" id = "n1" ><br>
+    <input type = "number" id = "n2" ><br>
+    <input type = "number" id = "n3" ><br>
+    <input type = "button" value = "Checar" onclick = "checar()">
+    <div id = "ju"></div>
+
+    <script>
+
+       function checar()
+       {
+
+        var n1 = Number(window.document.querySelector('input#n1').value)
+        var n2 = Number(window.document.querySelector('input#n2').value)
+        var n3 = Number(window.document.querySelector('input#n3').value)
+        var ju = window.document.querySelector('div#ju')
+
+        if(n1 > n2 && n3)
+        {
+          ju.innerHTML = `O maior numero é ${n1}`
+        }
+        if(n2 > n1 && n3)
+        {
+          ju.innerHTML = `O maior numero é ${n2}`
+        } 
+        if(n3 > n1 && n2)
+        {
+          ju.innerHTML = `O maior numero é ${n3}`
+        }
+
+       } 
+
+    </script>
+
+</body>
+</html>

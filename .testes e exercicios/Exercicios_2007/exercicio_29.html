@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Digite 3 numeros</h1>
+    <input type = "number" id = "n1"><br>
+    <input type = "number" id = "n2"><br>
+    <input type = "number" id = "n3"><br>
+    <input type = "button" value = "Calcule" onclick = "calc()">
+    <div id = "res">Resposta</div>
+    <P Id = ""></P>
+     
+    <script>
+
+        function calc()
+        {
+           var n1 = Number(window.document.querySelector('input#n1').value)
+           var n2 = Number(window.document.querySelector('input#n1').value)
+           var n3 = Number(window.document.querySelector('input#n1').value)
+           var res = window.document.querySelector('div#res')
+
+           if((n1 < n2) && (n1 < n3))
+           {
+
+             var calc = n2 + n3
+             res.innerHTML = `O calculo dos dois maiores numeros são ${calc}`
+
+           }
+           if((n2 < n1) && (n2 < n3))
+           {
+            
+             var calc = n1 + n3
+             res.innerHTML =`O calculo dos dois maiores numeros são ${calc}`
+
+           }
+           if((n3 < n1) && (n3 < n2))
+           {
+            
+             var calc = n1 + n2
+             res.innerHTML =`O calculo dos dois maiores numeros são ${calc}`
+
+           }
+
+           
+        }
+
+    </script>
+    
+</body>
+</html>

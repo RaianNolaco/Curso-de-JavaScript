@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 007</title>
+    <style>
+
+        Body
+        {
+
+           background-color:rgb(119, 7, 7);
+           color:blanchedalmond;
+           font:normal 18pt Arial;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Estudo de seleção JavaScript</h1>
+    <p>aqui vai o resultado</p>
+    <p> Estudando <strong>DOM</strong> em JavaScript </p>
+    <p name = 'par'>vamo que vamo</p>
+    <div id = 'd1' >Clique aqui</div>
+    <div id = 'd2'>Está é a segunda Div</div>     
+
+    <script>
+
+        //SELECIONANDO POR MARCA 
+         //Selecionando as Tags     
+         var corpo = window.document.body    
+         var p0 =  window.document.getElementsByTagName('p')[0]
+         var p1 =  window.document.getElementsByTagName('p')[1]
+
+         //Mostrando na tela
+         window.document.write(p0.innerText)    
+         window.document.write('<br>' + p1.innerHTML)
+         
+         //Alterando pela variavel
+         p0.style.color = 'green'
+         corpo.style.background = 'black'
+
+         
+        //SELECIONAOD POR ID
+        //selecionando pelo ID dado a Tag
+        var div = window.document.getElementById('d1')
+        div.style.background = 'green'
+
+        //SELECIONADO POR NOME
+        //selecionanod por nome dado a Tag
+        var p3 = window.document.getElementsByName('par')[0]
+        p3.style.color = 'orange'
+
+        //SELECIONANDO POR SELETOR
+        //Selecionando por id porem com selector
+        var div2 = window.document.querySelector('div#d2')
+        div2.style.background = 'green'
+
+</script>
+
+</body>
+</html>

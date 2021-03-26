@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+
+    <style>
+
+       body
+       {
+
+         background-color: rgb(80, 34, 122);
+         color: rgb(231, 103, 17);
+         font:oblique 20pt Arial;
+
+       }
+
+    </style>
+
+</head>
+<body>
+    
+   <script>
+    
+    var eleitores,nulos,brancos,validos
+
+    eleitores = Number(prompt('Digite a quantidade de eleitores no municipio: '))
+    nulos     = Number(prompt('Digite a quantidade de votos no nulos municipio: '))
+    brancos   = Number(prompt('Digite a quantidade de votos no brancos municipio: '))
+    validos   = Number(prompt('Digite a quantidade de votos no validos municipio: '))
+
+    var validar = validos + nulos + brancos 
+    if (validar > eleitores)
+    {
+
+        document.writeln('Algo deu errado com a quantidade de votos é eleitores<br>')
+        document.writeln('Digite as informações novamente<br>')
+
+    }
+    else
+    {
+
+       var calcNulos = 100 * nulos / eleitores 
+       var calcBrancos = 100 * brancos / eleitores
+       var calcValidos =  100 * validos / eleitores
+
+       document.writeln(`Os votos nulos equivalem a ${calcNulos.toFixed(3)}% de ${eleitores}<br>`)
+       document.writeln(`Os votos brancos equivalem a ${calcBrancos.toFixed(3)}% de ${eleitores}<br>`)
+       document.writeln(`Os votos validos equivalem a ${calcValidos.toFixed(3)}% de ${eleitores}<br>`)
+
+    }
+
+   </script>
+ 
+
+</body>
+</html>
