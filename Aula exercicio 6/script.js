@@ -37,13 +37,25 @@ function add()
 
 function verificar()
 {
+  
     var div = document.querySelector('div#div2')
 
     var txt = document.createElement("P")
     var tamanho = vet.length
     
-    txt.innerText += `A sequencia possue ${tamanho} numeros`
-    txt.innerText += ` O maior numero é ${vet.sort()}`
+    //essa função pega o maion numero de um Array
+  /* 
+   var maior = vet.reduce(function(a,b)
+    {
+      return Math.max(a,b)
+    })
+    */
+
+    // a função Math.max() não funciona se colocarmos apenas o vetor la dentro 
+    // temos que colocar três pontinhos ... assim: Math.max(...vet) (tanto par max como para min)
+    txt.innerText += `\nA sequencia possue ${tamanho} numeros`
+    txt.innerText += `\n O maior numero é ${Math.max(...vet)/*maior*/}`
+    txt.innerText += `\n O menor numero é ${Math.min(...vet)}`
 
     div.appendChild(txt)
 }
