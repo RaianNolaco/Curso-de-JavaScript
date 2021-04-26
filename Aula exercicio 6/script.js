@@ -1,10 +1,12 @@
-let vet = []  
+let numTxt = document.querySelector('input#numTxt')
+let sel = document.querySelector('select#secNum')
+var div = document.querySelector('div#div2')
+
+let vet = []
 
 function add()
 {
-  let numTxt = document.querySelector('input#numTxt')
-  let sel = document.querySelector('select#secNum')
-
+  
   let num = Number(numTxt.value)
 
   let verif = vet.indexOf(num)
@@ -33,29 +35,50 @@ function add()
 
     sel.appendChild(item)
   }
+
+  div.innerHTML = ''
+  numTxt.value = ''
+  numTxt.focus()
 }
+
 
 function verificar()
 {
-  
-    var div = document.querySelector('div#div2')
+  if (vet.length == 0)
+  {
+    window.alert('Adicione valores a lista antes de verificar')
+  }else{  
 
-    var txt = document.createElement("P")
-    var tamanho = vet.length
+     var tamanho = vet.length
+     
+     div.innerHTML = ''
+     //essa função pega o maion numero de um Array
+     /* 
+     var maior = vet.reduce(function(a,b)
+     {
+       return Math.max(a,b)
+     })
+     */
+
+     // a função Math.max() não funciona se colocarmos apenas o vetor la dentro 
+     // temos que colocar três pontinhos ... assim: Math.max(...vet) (tanto par max como para min)
+     div.innerHTML += `A sequencia possue ${tamanho} números`
+     div.innerHTML += `<br></br>O maior número é ${Math.max(...vet)/*maior*/}`
+     div.innerHTML += `<br></br>O menor número é ${Math.min(...vet)}`
     
-    //essa função pega o maion numero de um Array
-  /* 
-   var maior = vet.reduce(function(a,b)
-    {
-      return Math.max(a,b)
-    })
-    */
+     var total = 0
 
-    // a função Math.max() não funciona se colocarmos apenas o vetor la dentro 
-    // temos que colocar três pontinhos ... assim: Math.max(...vet) (tanto par max como para min)
-    txt.innerText += `\nA sequencia possue ${tamanho} numeros`
-    txt.innerText += `\n O maior numero é ${Math.max(...vet)/*maior*/}`
-    txt.innerText += `\n O menor numero é ${Math.min(...vet)}`
+     function soma(item)
+     {
+       total += item
+     }
+    
+     vet.forEach(soma)
 
-    div.appendChild(txt)
+     div.innerHTML += `<br></br>A soma dos números é ${total}`
+     div.innerHTML += `<br></br>A média entre os números é ${total/tamanho}`
+  }
 }
+ 
+
+

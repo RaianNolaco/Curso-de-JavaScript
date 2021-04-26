@@ -25,3 +25,6 @@ for(var i = 0; i < num.length; i++)
     console.log(`A posição ${i} tem o valor ${num[i]}`)
 }
    
+// Função Math.max() retorna o maior valor 
+console.log(Math.max(...num))
+
