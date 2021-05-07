@@ -1,0 +1,8 @@
+Condição aninhada : varias condiçoes 
+
+Para pegar a hora atual em JS:
+
+var agr  = new Date()
+var hora = agr.getHours()
+var min  = agr.getMinutes()
+
